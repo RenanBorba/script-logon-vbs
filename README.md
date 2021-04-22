@@ -1,2 +1,2 @@
-# Script de Logon VBS
+# Script de Logon VBScript
 ## Microsoft Windows Server 2016  
