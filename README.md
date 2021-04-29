@@ -4,25 +4,18 @@
 
 
 
-'==========================================================================='
-'                                                                           '
-'  Script de Logon VBS                                                      '
-'  Microsoft Windows Server 2016                                            '
-'                                                                           '
-'==========================================================================='
 
 
-'==========================================================================='
-' Impedindo a Exibição de Erro para o Usuário                               '
-'==========================================================================='
+### Impedindo a Exibição de Erro para o Usuário                               
+
 
 On error Resume Next
 Err.clear 0
 
 
-'==========================================================================='
-' Sincroniza o Horário da Estação com o Servidor                            '         
-'==========================================================================='
+
+### Sincroniza o Horário da Estação com o Servidor                                   
+
 
 'set objWMIService = GetObject("winmgmts:\\" & strComputer & "\root\CIMV2") '
 'set objShell = CreateObject("WScript.shell") '
@@ -30,9 +23,9 @@ Err.clear 0
 'set objExec = objShell.exec(strCmd) '
 
 
-'==========================================================================='
-' Mapear Pastas de acordo com o Grupo do USER                               '
-'==========================================================================='
+
+### Mapear Pastas de acordo com o Grupo do USER                               
+
 
 set objNetwork = CreateObject("WScript.Network")
 strDom = objNetwork.UserDomain
@@ -67,9 +60,9 @@ For Each objGroup In objUser.Groups
 Next
 
 
-'==========================================================================='
-' Mapear Impressoras (Mapeamento também pode ser realizado via GPO)         '
-'==========================================================================='
+
+## Mapear Impressoras (Mapeamento também pode ser realizado via GPO)         
+
 
 set WshNetwork = WScript.CreateObject("WScript.Network")
 WshNetwork.AddWindowsPrinterConnection "\\SRVHOMOLOGDC1\Brother", "Brother"
@@ -77,17 +70,17 @@ WshNetwork.AddWindowsPrinterConnection "\\SRVHOMOLOGDC1\HP", "HP"
 'WshNetwork.SetDefaultPrinter "\\SRVHOMOLOGDC1\Brother", "Brother" '
 
 
-'==========================================================================='
-' Mapear Pastas                                                             '
-'==========================================================================='
+
+## Mapear Pastas                                                             
+
 
 WshNetwork.MapNetworkDrive "P:", "\\SRVHOMOLOGDC1\Publica", "true"
 WshNetwork.MapNetworkDrive "E:", "\\SRVHOMOLOGDC1\Digitalizacoes", "true"
 
 
-'==========================================================================='
-' Criar Atalho para um Site no Desktop                                      '
-'==========================================================================='
+
+### Criar Atalho para um Site no Desktop                                      
+
 
 set WshShell = WScript.CreateObject("WScript.Shell")
 strDesktop = WshShell.SpecialFolders("Desktop")
@@ -101,9 +94,9 @@ oUrlLink.IconLocation = "\\SRVHOMOLOGDC1\Icones\favicon.ico"
 oUrlLink.Save
 
 
-'==========================================================================='
-' Criar Atalho do Compartilhamento no Desktop                               '
-'==========================================================================='
+
+### Criar Atalho do Compartilhamento no Desktop                               
+
 
 strAppPath = "S:\"
 set wshShell = CreateObject("WScript.Shell")
@@ -127,9 +120,9 @@ oShellLink.Save
 WshShell.SendKeys "{F5}"
 
 
-'==========================================================================='
-' Mensagem no logon                                                         '
-'==========================================================================='
+
+### Mensagem no logon                                                         
+
 
 'set objUser = WScript.CreateObject("WScript.Network") '
 'wuser = objUser.UserName '
@@ -146,6 +139,7 @@ WshShell.SendKeys "{F5}"
 
 
 MsgBox ("ATENÇÃO: Pedimos que ao desligar seu computador, escolha a opção Instalar as atualizações e desligar. " & vbcrlf & "Somente assim seu computador instalará atualizações críticas de segurança e ficará atualizado e seguro. " & vbcrlf & "Agradecemos a compreensão, " & vbcrlf & "Equipe da TI")
+
 
 
 WScript.Quit
