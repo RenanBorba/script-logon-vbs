@@ -135,7 +135,7 @@ WshShell.SendKeys "{F5}" <br><br><br>
 '  Else ' <br>
 '    MsgBox ("Boa Noite "+wuser+", você acaba de ingressar na rede corporativa da Hospital X, por favor respeite as políticas de segurança e bom trabalho!") ' <br>
 
-'  End If ' <br>
+'  End If ' <br><br>
 
 
 MsgBox ("ATENÇÃO: Pedimos que ao desligar seu computador, escolha a opção Instalar as atualizações e desligar. " & vbcrlf & "Somente assim seu computador instalará atualizações críticas de segurança e ficará atualizado e seguro. " & vbcrlf & "Agradecemos a compreensão, " & vbcrlf & "Equipe da TI") <br><br>
