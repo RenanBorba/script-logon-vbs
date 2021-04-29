@@ -1,9 +1,10 @@
 # Script de Logon VBScript
-## Microsoft Windows Server 2016  
+### Microsoft Windows Server 2016  
+
 
 <br><br>
 
-### Impedindo a Exibição de Erro para o Usuário                               
+## Impedindo a Exibição de Erro para o Usuário                               
 
 
 On error Resume Next <br>
@@ -11,7 +12,7 @@ Err.clear 0 <br><br><br>
 
 
 
-### Sincroniza o Horário da Estação com o Servidor                                   
+## Sincroniza o Horário da Estação com o Servidor                                   
 
 
 'set objWMIService = GetObject("winmgmts:\\" & strComputer & "\root\CIMV2") ' <br>
@@ -21,7 +22,7 @@ Err.clear 0 <br><br><br>
 
 
 
-### Mapear Pastas de acordo com o Grupo do USER                               
+## Mapear Pastas de acordo com o Grupo do USER                               
 
 
 set objNetwork = CreateObject("WScript.Network") <br>
@@ -77,7 +78,7 @@ WshNetwork.MapNetworkDrive "E:", "\\SRVHOMOLOGDC1\Digitalizacoes", "true" <br><b
 
 
 
-### Criar Atalho para um Site no Desktop                                      
+## Criar Atalho para um Site no Desktop                                      
 
 
 set WshShell = WScript.CreateObject("WScript.Shell") <br>
@@ -93,7 +94,7 @@ oUrlLink.Save <br><br><br>
 
 
 
-### Criar Atalho do Compartilhamento no Desktop                               
+## Criar Atalho do Compartilhamento no Desktop                               
 
 
 strAppPath = "S:\" <br>
@@ -119,7 +120,7 @@ WshShell.SendKeys "{F5}" <br><br><br>
 
 
 
-### Mensagem no logon                                                         
+## Mensagem no Logon                                                         
 
 
 'set objUser = WScript.CreateObject("WScript.Network") ' <br>
