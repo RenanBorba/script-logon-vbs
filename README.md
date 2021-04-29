@@ -35,7 +35,7 @@ set FSODrive = CreateObject("Scripting.FileSystemObject") <br>
 
 For Each objGroup In objUser.Groups <br>
 
-  Select Case objGroup.Name
+  Select Case objGroup.Name <br>
     Case "DL_Setor_Administrativo"
       If not FSODrive.DriveExists("S:") Then
         objNetwork.MapNetworkDrive "S:", "\\SRVHOMOLOGDC1\Adm","true"
