@@ -1,16 +1,13 @@
 # Script de Logon VBScript
 ## Microsoft Windows Server 2016  
 
-
-
-
-
+<br><br>
 
 ### Impedindo a Exibição de Erro para o Usuário                               
 
 
 On error Resume Next <br>
-Err.clear 0 <br>
+Err.clear 0 <br><br><br>
 
 
 
@@ -20,7 +17,7 @@ Err.clear 0 <br>
 'set objWMIService = GetObject("winmgmts:\\" & strComputer & "\root\CIMV2") ' <br>
 'set objShell = CreateObject("WScript.shell") ' <br>
 'strCmd = "net time \\nomeserver /set /yes" ' <br>
-'set objExec = objShell.exec(strCmd) ' <br><br>
+'set objExec = objShell.exec(strCmd) ' <br><br><br>
 
 
 
@@ -36,6 +33,7 @@ set FSODrive = CreateObject("Scripting.FileSystemObject") <br>
 For Each objGroup In objUser.Groups <br>
 
   Select Case objGroup.Name <br>
+  
     Case "DL_Setor_Administrativo"
       If not FSODrive.DriveExists("S:") Then
         objNetwork.MapNetworkDrive "S:", "\\SRVHOMOLOGDC1\Adm","true"
@@ -57,7 +55,7 @@ For Each objGroup In objUser.Groups <br>
       End If
 
   End Select <br>
-Next <br><br>
+Next <br><br><br>
 
 
 
@@ -67,7 +65,7 @@ Next <br><br>
 set WshNetwork = WScript.CreateObject("WScript.Network") <br>
 WshNetwork.AddWindowsPrinterConnection "\\SRVHOMOLOGDC1\Brother", "Brother" <br>
 WshNetwork.AddWindowsPrinterConnection "\\SRVHOMOLOGDC1\HP", "HP" <br>
-'WshNetwork.SetDefaultPrinter "\\SRVHOMOLOGDC1\Brother", "Brother" ' <br><br>
+'WshNetwork.SetDefaultPrinter "\\SRVHOMOLOGDC1\Brother", "Brother" ' <br><br><br>
 
 
 
@@ -75,7 +73,7 @@ WshNetwork.AddWindowsPrinterConnection "\\SRVHOMOLOGDC1\HP", "HP" <br>
 
 
 WshNetwork.MapNetworkDrive "P:", "\\SRVHOMOLOGDC1\Publica", "true" <br>
-WshNetwork.MapNetworkDrive "E:", "\\SRVHOMOLOGDC1\Digitalizacoes", "true" <br>
+WshNetwork.MapNetworkDrive "E:", "\\SRVHOMOLOGDC1\Digitalizacoes", "true" <br><br><br>
 
 
 
@@ -91,7 +89,7 @@ oUrlLink.TargetPath = "http://app01.system.com.br/RDWeb/Pages/login.aspx" <br>
 
 oUrlLink.IconLocation = "\\SRVHOMOLOGDC1\Icones\favicon.ico" <br>
 
-oUrlLink.Save <br>
+oUrlLink.Save <br><br><br>
 
 
 
@@ -117,7 +115,7 @@ oShellLink.Description = "Pasta_Publica" <br>
 oShellLink.Save <br>
 
 'Envia o comando para apertar a tecla F5 para atualizar os ícones no Desktop ' <br>
-WshShell.SendKeys "{F5}" <br><br>
+WshShell.SendKeys "{F5}" <br><br><br>
 
 
 
