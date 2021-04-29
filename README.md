@@ -125,6 +125,7 @@ WshShell.SendKeys "{F5}" <br><br><br>
 
 'set objUser = WScript.CreateObject("WScript.Network") ' <br>
 'wuser = objUser.UserName ' <br>
+
 '  If Time <= "12:00:00" Then ' <br>
 '    MsgBox ("Bom Dia "+wuser+", você acaba de ingressar na rede corporativa da Hospital X, por favor respeite as políticas de segurança e bom trabalho!") ' <br>
 
