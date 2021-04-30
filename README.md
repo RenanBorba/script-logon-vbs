@@ -85,11 +85,8 @@ set WshShell = WScript.CreateObject("WScript.Shell") <br>
 strDesktop = WshShell.SpecialFolders("Desktop") <br>
 
 set oUrlLink = WshShell.CreateShortcut(strDesktop & "\RD Web Access.lnk") <br>
-
 oUrlLink.TargetPath = "http://app01.system.com.br/RDWeb/Pages/login.aspx" <br>
-
 oUrlLink.IconLocation = "\\SRVHOMOLOGDC1\Icones\favicon.ico" <br>
-
 oUrlLink.Save <br><br><br>
 
 
