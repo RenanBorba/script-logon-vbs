@@ -2,7 +2,7 @@
 ## *Microsoft Windows Server 2016*
 
 
-<br><br>
+<br><br><br><br>
 
 ## Impedindo a Exibição de Erro para o Usuário                               
 
@@ -12,7 +12,7 @@ Err.clear 0
 ```
 
 
-
+<br><br>
 ## Sincroniza o Horário da Estação com o Servidor                                   
 
 ```
@@ -23,7 +23,7 @@ set objExec = objShell.exec(strCmd)
 ```
 
 
-
+<br><br>
 ## Mapear Pastas de acordo com o Grupo do USER                               
 
 ```
@@ -61,7 +61,7 @@ For Each objGroup In objUser.Groups
 Next
 ```
 
-
+<br><br>
 ## Mapear Impressoras (Mapeamento também pode ser realizado via GPO)         
 
 ```
@@ -71,7 +71,7 @@ WshNetwork.AddWindowsPrinterConnection "\\SRVHOMOLOGDC1\HP", "HP"
 WshNetwork.SetDefaultPrinter "\\SRVHOMOLOGDC1\Brother", "Brother"
 ```
 
-
+<br><br>
 ## Mapear Pastas                                                             
 
 ```
@@ -79,7 +79,7 @@ WshNetwork.MapNetworkDrive "P:", "\\SRVHOMOLOGDC1\Publica", "true"
 WshNetwork.MapNetworkDrive "E:", "\\SRVHOMOLOGDC1\Digitalizacoes", "true"
 ```
 
-
+<br><br>
 ## Criar Atalho para um Site no Desktop                                      
 
 ```
@@ -93,7 +93,7 @@ oUrlLink.Save
 ```
 
 
-
+<br><br>
 ## Criar Atalho do Compartilhamento no Desktop                               
 
 ```
@@ -116,35 +116,40 @@ oShellLink.Description = "Pasta_Publica"
 oShellLink.Save
 ```
 
+<br>
+
 #### Envia o comando para apertar a tecla F5 para atualizar os ícones no Desktop
+
 ```
 WshShell.SendKeys "{F5}"
 ```
 
-
+<br><br>
 ## Mensagem no Logon                                                         
 
 ```
-'set objUser = WScript.CreateObject("WScript.Network") '
-'wuser = objUser.UserName '
+set objUser = WScript.CreateObject("WScript.Network")
+wuser = objUser.UserName
 
-'  If Time <= "12:00:00" Then '
-'    MsgBox ("Bom Dia "+wuser+", você acaba de ingressar na rede corporativa da Hospital X, por favor respeite as políticas de segurança e bom trabalho!") '
+If Time <= "12:00:00" Then
+    MsgBox ("Bom Dia "+wuser+", você acaba de ingressar na rede corporativa do Hospital X, por favor respeite as políticas de segurança e bom trabalho!")
 
-'  ElseIf Time >= "12:00:01" And Time <= "18:00:00" Then '
-'    MsgBox ("Boa Tarde "+wuser+", você acaba de ingressar na rede corporativa da Hospital X, por favor respeite as políticas de segurança e bom trabalho!") '
+  ElseIf Time >= "12:00:01" And Time <= "18:00:00" Then
+    MsgBox ("Boa Tarde "+wuser+", você acaba de ingressar na rede corporativa do Hospital X, por favor respeite as políticas de segurança e bom trabalho!")
 
-'  Else '
-'    MsgBox ("Boa Noite "+wuser+", você acaba de ingressar na rede corporativa da Hospital X, por favor respeite as políticas de segurança e bom trabalho!") '
+  Else
+    MsgBox ("Boa Noite "+wuser+", você acaba de ingressar na rede corporativa do Hospital X, por favor respeite as políticas de segurança e bom trabalho!")
 
-'  End If '
+End If
 ```
+
+**OU**
 
 ```
 MsgBox ("ATENÇÃO: Pedimos que ao desligar seu computador, escolha a opção Instalar as atualizações e desligar. " & vbcrlf & "Somente assim seu computador instalará atualizações críticas de segurança e ficará atualizado e seguro. " & vbcrlf & "Agradecemos a compreensão, " & vbcrlf & "Equipe da TI")
 ```
 
-<br>
+<br><br><br><br>
 
 ```
 WScript.Quit
