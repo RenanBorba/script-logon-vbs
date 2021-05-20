@@ -142,14 +142,15 @@ If Time <= "12:00:00" Then
 
 End If
 ```
-
+&nbsp;
 **OU**
+&nbsp;
 
 ```
 MsgBox ("ATENÇÃO: Pedimos que ao desligar seu computador, escolha a opção Instalar as atualizações e desligar. " & vbcrlf & "Somente assim seu computador instalará atualizações críticas de segurança e ficará atualizado e seguro. " & vbcrlf & "Agradecemos a compreensão, " & vbcrlf & "Equipe da TI")
 ```
 
-<br><br><br><br>
+<br><br>&nbsp;
 
 ```
 WScript.Quit
