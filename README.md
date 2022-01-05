@@ -143,7 +143,7 @@ If Time <= "12:00:00" Then
 End If
 ```
 &nbsp;
-**OU**
+**Ou**
 &nbsp;
 
 ```
